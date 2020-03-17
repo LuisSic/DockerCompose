@@ -1,6 +1,6 @@
 # Docker Example
 
-This example shows the use of Docker files to create different images and finally use Docker Compose to create the different containers for this architecture. Thanks to the reverse proxy we can access two different applications depending on the url. An application that displays a static web page and another application that uses a redis database to store information.
+This example shows the use of Docker files to create different images and finally use Docker Compose to create the different containers for this architecture. With the reverse proxy we can access two different applications depending on the url. An application that displays a static web page and another application that uses a redis database to store information.
 
 ## Usage
 You must enter each folder of each project and execute the following command. The following command must be run to build the image. 
