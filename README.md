@@ -25,7 +25,7 @@ Finally, docker compose must be run with the following command:
 docker-compose up -d
 ```
 
-## Architectures
+## Architecture
 Docker compose will build an architecture like the following image:
 
  <img src="./resources/dockerCompose.png" title="Architecture">
