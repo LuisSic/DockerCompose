@@ -1,77 +1,31 @@
-# Docker Container Name
+# Docker Example
 
-A one paragraph description about the container.
+This example shows the use of dockerfiles to create different images and in the end make use of them in a DockerCompose.
 
-## Getting Started
+## Usage
 
-These instructions will cover usage information and for the docker container 
-
-### Prerequisities
-
-
-In order to run this container you'll need docker installed.
-
-* [Windows](https://docs.docker.com/windows/started)
-* [OS X](https://docs.docker.com/mac/started/)
-* [Linux](https://docs.docker.com/linux/started/)
-
-### Usage
-
-#### Container Parameters
-
-List the different parameters available to your container
+The following command must be run to build the image. The image will have a nginx that will run a static web page. 
 
 ```shell
-docker run give.example.org/of/your/container:v0.2.1 parameters
+docker build -t nginxserver .
 ```
 
-One example per permutation 
+Then the same command must be executed with the python application and the reverse proxy 
 
 ```shell
-docker run give.example.org/of/your/container:v0.2.1
+docker build -t pythonflask .
+docker build -t nginxproxy .
+
 ```
 
-Show how to get a shell started in your container too
+Finally, docker compose must be run with the following command:
 
 ```shell
-docker run give.example.org/of/your/container:v0.2.1 bash
+docker-compose up -d
 ```
 
-#### Environment Variables
+## Architectures
 
-* `VARIABLE_ONE` - A Description
-* `ANOTHER_VAR` - More Description
-* `YOU_GET_THE_IDEA` - And another
-
-#### Volumes
-
-* `/your/file/location` - File location
-
-#### Useful File Locations
-
-* `/some/special/script.sh` - List special scripts
-  
-* `/magic/dir` - And also directories
-
-## Built With
-
-* List the software v0.1.3
-* And the version numbers v2.0.0
-* That are in this container v0.3.2
-
-## Find Us
-
-* [GitHub](https://github.com/your/repository)
-* [Quay.io](https://quay.io/repository/your/docker-repository)
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the 
-[tags on this repository](https://github.com/your/repository/tags). 
 
 ## Authors
 
