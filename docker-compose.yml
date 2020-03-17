@@ -1,0 +1,31 @@
+version: "3"
+services:
+    nginx: 
+      image: nginxproxy
+      container_name: production_nginx
+      ports:
+        - 8080:8080
+      depends_on:
+        - app_2
+        - app_1
+  
+    app_1:
+      image: nginxserver
+      container_name: appnginx
+      ports:
+        - "80:80"
+  
+    app_2:
+      image: pythonflask
+      container_name: pythonapp
+      ports:
+        - "5000:5000"
+      depends_on:
+        - redis
+      environment:
+        - REDIS=redis
+    
+    redis:
+      image: redis:latest
+      ports:
+        - "6379:6379" 
