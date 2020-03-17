@@ -28,7 +28,7 @@ docker-compose up -d
 ## Architectures
 Docker compose will build an architecture like the following image:
 
-
+ <img src="./resources/dockerCompose.png" title="Architecture">
 
 The application works as follows:
 * If you put the following http://localhost:8080/app_1/ in the browser, the static web page will be displayed.
@@ -38,7 +38,7 @@ The application works as follows:
 
 ## Authors
 
-* **Luis Antonio Sic** - *Tecnologia Transaccional* - [PurpleBooth](https://github.com/LuisSic)
+* **Luis Antonio Sic** - *Tecnologia Transaccional* - [sluis117](https://github.com/LuisSic)
 
 
 ## License
