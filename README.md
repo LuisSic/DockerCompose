@@ -1,10 +1,11 @@
 # Docker Example
 
-This example shows the use of dockerfiles to create different images and in the end make use of them in a DockerCompose.
+This example shows the use of dockerfiles to create different images and in the end make use of them in a Docker Compose. Thanks to the reverse proxy we can access two different applications depending on the url. An application that displays a static web page and another application that uses a redis database to store information.
 
 ## Usage
+You must enter each folder of each project and execute the following command. The following command must be run to build the image. 
 
-The following command must be run to build the image. The image will have a nginx that will run a static web page. 
+The image will have a nginx that will run a static web page. 
 
 ```shell
 docker build -t nginxserver .
@@ -25,20 +26,22 @@ docker-compose up -d
 ```
 
 ## Architectures
+Docker compose will build an architecture like the following image:
 
+
+
+The application works as follows:
+* If you put the following http://localhost:8080/app_1/ in the browser, the static web page will be displayed.
+* If you put the following http://localhost:8080/app_2 in the browser, a message from the web application will be displayed.
+* If you put http://localhost:8080/app_2/set/your_name in the browser, an updated name message will be displayed.
+* If you put http://localhost:8080/app_2/get in the browser, it will display a message with name previously entered.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Luis Antonio Sic** - *Tecnologia Transaccional* - [PurpleBooth](https://github.com/LuisSic)
 
-See also the list of [contributors](https://github.com/your/repository/contributors) who 
-participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Acknowledgments
-
-* People you want to thank
-* If you took a bunch of code from somewhere list it here
